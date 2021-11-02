@@ -28,13 +28,6 @@ M.config = function()
 
 		formatting = {
 			format = function(entry, vim_item)
-				-- if vim.g.k_use_icons then
-				-- 	local icon = require('plugins.lsp.icons')[vim_item.kind]
-				-- 	if icon then
-				-- 		vim_item.kind = icon .. vim_item.kind
-				-- 	end
-				-- end
-
 				vim_item.menu = ({
 					nvim_lsp = '[LSP]',
 					buffer = '[Buffer]',
