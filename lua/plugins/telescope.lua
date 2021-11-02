@@ -22,7 +22,7 @@ M.config = function()
 	}
 
 	require('which-key').register({
-		['<C-p>'] = { t('find_files'), 'Find Files' },
+		['<C-p>'] = { t('find_files', 'hidden = true'), 'Find Files' },
 		['<Leader>f'] = {
 			name = 'Find',
 			f = { t('live_grep'), 'Grep' },
