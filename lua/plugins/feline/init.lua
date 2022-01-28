@@ -1,7 +1,5 @@
 local M = {}
 
--- local filename_provider = require('plugins.feline.filename').provider
-
 local components = {
 	active = {{}, {}, {}},
 	inactive = {{}, {}, {}},
@@ -127,51 +125,52 @@ table.insert(components.active[1], {
 	},
 })
 
+local filemeta_hl = {
+	name = 'filemeta',
+	fg = 'fg3',
+	bg = 'bg0_s',
+}
 
 -- file encoding
 local file_meta = require('plugins.feline.filemeta')
 table.insert(components.active[3], {
-	provider = 'file_format',
-	hl = {
-		name = 'filemeta',
-		fg = 'fg3',
-		bg = 'bg0_s',
-	},
+	provider = 'file_format_custom',
+	hl = filemeta_hl,
 	left_sep = {
 		str = ' ',
-		hl = 'filemeta',
+		hl = filemeta_hl,
 	},
 	right_sep = {
 		str = ' ',
-		hl = 'filemeta',
+		hl = filemeta_hl,
 	},
 })
 
 -- file encoding
 table.insert(components.active[3], {
 	provider = 'file_encoding_custom',
-	hl = 'filemeta',
+	hl = filemeta_hl,
 	left_sep = {
 		str = '| ',
-		hl = 'filemeta',
+		hl = filemeta_hl,
 	},
 	right_sep = {
 		str = ' ',
-		hl = 'filemeta',
+		hl = filemeta_hl,
 	},
 })
 
 -- file type
 table.insert(components.active[3], {
 	provider = 'file_type_custom',
-	hl = 'filemeta',
+	hl = filemeta_hl,
 	left_sep = {
 		str = '| ',
-		hl = 'filemeta',
+		hl = filemeta_hl,
 	},
 	right_sep = {
 		str = ' ',
-		hl = 'filemeta',
+		hl = filemeta_hl,
 	},
 })
 
@@ -193,17 +192,19 @@ table.insert(components.active[3], {
 })
 
 -- cursor position
+local cursor_position_hl = {
+	name = 'position',
+	fg = 'fg1',
+	bg = 'bg3',
+}
+
 sep = {
 	str = ' ',
-	hl = 'position',
+	hl = cursor_position_hl,
 }
 table.insert(components.active[3], {
 	provider = 'position_custom',
-	hl = {
-		name = 'position',
-		fg = 'fg1',
-		bg = 'bg3',
-	},
+	hl = cursor_position_hl,
 	left_sep = sep,
 	right_sep = sep,
 })
@@ -273,13 +274,13 @@ M.config = function()
 	end
 
 	require('feline').setup({
-		colors = require('plugins.feline.colors').colors,
+		theme = require('plugins.feline.colors').colors,
 		vi_mode_colors = vi_mode.colors,
 		components = components,
 		custom_providers = {
 			file_encoding_custom = file_meta.file_encoding,
 			file_type_custom = file_meta.file_type,
-			file_format = file_meta.file_format,
+			file_format_custom = file_meta.file_format,
 			line_percentage_custom = buffer_meta.line_percentage,
 			position_custom = buffer_meta.position,
 		},

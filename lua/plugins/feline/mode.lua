@@ -36,13 +36,6 @@ local get_hl_name = function(color)
 	return 'mode' .. color
 end
 
-M.get_sep = function()
-	return {
-		str = ' ',
-		hl = get_hl_name(M.get_bg()),
-	}
-end
-
 local get_hl_gen = function(color_fn)
 	return function()
 		local color = color_fn()
@@ -57,5 +50,13 @@ end
 
 M.get_hl = get_hl_gen(M.get_bg)
 M.get_right_hl = get_hl_gen(M.get_mode_color)
+
+M.get_sep = function()
+	return {
+		str = ' ',
+		hl = M.get_hl,
+	}
+end
+
 
 return M

@@ -64,8 +64,7 @@ require('packer').startup(function(use)
 
 	-- lsp
 	use {
-		'kaylynb/nvim-lspconfig',
-		branch = 'path_windows',
+		'neovim/nvim-lspconfig',
 		config = function() require('plugins.lsp').config() end,
 		cond = function() return not vim.g.nolsp end
 	}
