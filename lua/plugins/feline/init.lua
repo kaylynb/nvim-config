@@ -225,6 +225,13 @@ table.insert(components.active[3], {
 
 -- inactive components
 -- filename
+sep = {
+	str = ' ',
+	hl = {
+		bg = 'bg0_h',
+	},
+}
+
 table.insert(components.inactive[1], {
 	provider = filename_provider,
 	icon = '',
@@ -233,7 +240,10 @@ table.insert(components.inactive[1], {
 		fg = 'fg4',
 		bg = 'bg0_h',
 	},
+	left_sep = sep,
+	right_sep = sep,
 })
+
 table.insert(components.inactive[1], {
 	provider = function () return ' ' end,
 	hl = {
@@ -244,8 +254,11 @@ table.insert(components.inactive[1], {
 -- line percentage
 sep = {
 	str = ' ',
-	hl = 'line_percentage_inactive',
+	hl = {
+		bg = 'bg0_h',
+	},
 }
+
 table.insert(components.inactive[3], {
 	provider = 'line_percentage_custom',
 	hl = {
@@ -260,7 +273,9 @@ table.insert(components.inactive[3], {
 -- cursor position
 sep = {
 	str = ' ',
-	hl = 'position_inactive',
+	hl = {
+		bg = 'bg3',
+	},
 }
 
 table.insert(components.inactive[3], {
