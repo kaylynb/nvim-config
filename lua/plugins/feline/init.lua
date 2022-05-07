@@ -20,7 +20,7 @@ table.insert(components.active[1], {
 
 -- filename
 local filename_provider = {
-	name = 'file_info',
+	name = 'file_info_custom',
 	opts = {
 		file_modified_icon = '| +',
 		file_readonly_icon = 'RO | ',
@@ -304,6 +304,7 @@ M.config = function()
 			file_encoding_custom = file_meta.file_encoding,
 			file_type_custom = file_meta.file_type,
 			file_format_custom = file_meta.file_format,
+			file_info_custom = filename.file_info_with_special,
 			line_percentage_custom = buffer_meta.line_percentage,
 			position_custom = buffer_meta.position,
 		},
