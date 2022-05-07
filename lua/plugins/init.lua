@@ -96,16 +96,12 @@ require('packer').startup(function(use)
 	}
 
 	-- statusline
-	-- use 'itchyny/lightline.vim'
 	use {
-		-- 'kaylynb/feline.nvim',
-		-- branch = 'kaylyn',
 		'feline-nvim/feline.nvim',
 		config = function() require('plugins.feline').config() end,
 	}
 
 	-- line commenting
-	-- use 'tpope/vim-commentary'
 	use {
 		'b3nj5m1n/kommentary',
 		config = function() require('plugins.kommentary').config() end,
