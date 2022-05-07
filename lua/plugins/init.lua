@@ -116,8 +116,10 @@ require('packer').startup(function(use)
 	use 'iloginow/vim-stylus'
 
 	use 'ledger/vim-ledger'
+
 	-- use 'matt-deacalion/vim-systemd-syntax'
 	-- use {'kaylynb/vim-nftables', branch = 'noindentstyles'}
+	-- use 'rafcamlet/nvim-luapad'
 
 end)
 
