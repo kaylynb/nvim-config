@@ -25,15 +25,23 @@ local filename_provider = {
 		file_modified_icon = '| +',
 		file_readonly_icon = 'RO | ',
 		type = 'unique',
-		unnamed = '[No Name]',
+		-- unnamed = '[No Name]',
 	},
 }
 
 local filename = require('plugins.feline.filename')
+
+sep = {
+	str = ' ',
+	hl = filename.get_hl,
+}
+
 table.insert(components.active[1], {
 	provider = filename_provider,
 	icon = '',
 	hl = filename.get_hl,
+	left_sep = sep,
+	right_sep = sep,
 })
 
 -- git branch

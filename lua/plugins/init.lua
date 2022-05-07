@@ -98,8 +98,9 @@ require('packer').startup(function(use)
 	-- statusline
 	-- use 'itchyny/lightline.vim'
 	use {
-		'kaylynb/feline.nvim',
-		branch = 'kaylyn',
+		-- 'kaylynb/feline.nvim',
+		-- branch = 'kaylyn',
+		'feline-nvim/feline.nvim',
 		config = function() require('plugins.feline').config() end,
 	}
 
