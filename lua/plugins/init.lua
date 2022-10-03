@@ -25,8 +25,8 @@ require('packer').startup(function(use)
 
 	-- enhanced f
 	use {
-		'ggandor/lightspeed.nvim',
-		config = function() require('plugins.lightspeed').config() end
+		'ggandor/leap.nvim',
+		config = function() require('plugins.leap').config() end
 	}
 
 	-- netrw replacement
@@ -99,6 +99,8 @@ require('packer').startup(function(use)
 	use {
 		'feline-nvim/feline.nvim',
 		config = function() require('plugins.feline').config() end,
+		requires = 'ellisonleao/gruvbox.nvim',
+		after = 'gruvbox.nvim',
 	}
 
 	-- line commenting

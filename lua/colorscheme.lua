@@ -6,7 +6,7 @@ local c = require('gruvbox.palette')
 require("gruvbox").setup({
 	italic = true,
 	overrides = {
-		SignColumn = { g = c.bg0 },
+		SignColumn = { bg = c.dark0  },
 	},
 })
 
