@@ -12,7 +12,7 @@ local M = {}
 --   return result
 -- end
 
-local c = require('gruvbox.colors')
+local c = require('gruvbox.palette')
 M.colors = {
 	bg = c.dark0_soft,
 	bg0_h = c.dark0_hard,

@@ -1,8 +1,13 @@
 vim.opt.termguicolors = true
 vim.opt.background = 'dark'
 
-vim.g.gruvbox_sign_column = 'bg0'
-vim.g.gruvbox_italicize_comments = true
--- vim.g.gruvbox_italicize_strings = true
+local c = require('gruvbox.palette')
+
+require("gruvbox").setup({
+	italic = true,
+	overrides = {
+		SignColumn = { g = c.bg0 },
+	},
+})
 
 vim.cmd('colorscheme gruvbox')
