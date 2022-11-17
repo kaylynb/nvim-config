@@ -65,7 +65,7 @@ M.config = function()
 	for _, server in ipairs(servers) do
 		lspconfig[server].setup {
 			on_attach = on_attach,
-			capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
+			capabilities = require('cmp_nvim_lsp').default_capabilities(),
 		}
 	end
 end

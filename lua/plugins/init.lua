@@ -65,6 +65,9 @@ require('packer').startup(function(use)
 	-- lsp
 	use {
 		'neovim/nvim-lspconfig',
+		requires = {
+			'hrsh7th/cmp-nvim-lsp',
+		},
 		config = function() require('plugins.lsp').config() end,
 		cond = function() return not vim.g.nolsp end
 	}
