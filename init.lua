@@ -1,6 +1,4 @@
 require('opts')
-require('plugins')
+require('bootstrap-plugins')
 require('colorscheme')
-require('binds')
--- alias for command-line mode
--- k('', '<Space>', ':', {})
+requiire('binds')

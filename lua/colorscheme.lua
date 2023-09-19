@@ -1,13 +1,17 @@
-vim.opt.termguicolors = true
-vim.opt.background = 'dark'
+local vscode = vim.g.vscode == 1
 
-local c = require('gruvbox.palette')
-
-require("gruvbox").setup({
-	italic = true,
-	overrides = {
-		SignColumn = { bg = c.dark0  },
-	},
-})
-
-vim.cmd('colorscheme gruvbox')
+if not vscode then
+	
+	vim.opt.termguicolors = true
+	vim.opt.background = 'dark'
+	
+	local c = require('gruvbox.palette')
+	
+	require("gruvbox").setup({
+		italic = {
+			strings = true,
+		}
+	})
+	
+	vim.cmd('colorscheme gruvbox')
+end

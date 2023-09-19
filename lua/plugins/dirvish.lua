@@ -1,2 +1,10 @@
-vim.g.loaded_netrwPlugin = 1
-vim.api.nvim_command [[command! -nargs=? -complete=dir Explore Dirvish <args>]]
+local M = {
+	'justinmk/vim-dirvish',
+	cond = vim.g.vscode ~= 1,
+}
+
+function M.config()
+	vim.g.loaded_netrwPlugin = 1
+end
+
+return M

@@ -1,9 +1,5 @@
 local o = vim.opt
 
-vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-
 -- if vim.fn.has('win64') == 1 then
 if vim.loop.os_uname().version:match 'Windows' then
 -- disable ctrl-z on windows as it locks terminal instead
@@ -21,6 +17,9 @@ if vim.loop.os_uname().version:match 'Windows' then
 	o.fileformats = 'unix,dos'
 end
 
+--vim.g.mapleader = ' '
+--vim.g.maplocalleader = ' '
+
 -- update title based on buffer
 o.title = true
 
@@ -28,7 +27,7 @@ o.title = true
 o.number = true
 
 -- highlight line
-o.cursorline = true
+--o.cursorline = true
 
 -- search options
 o.incsearch = true
@@ -56,9 +55,6 @@ o.hidden = true
 -- show whitespace chars
 o.list = true
 o.listchars = 'tab:→ ,eol:¬,space:·'
-
--- TODO: only turn this on for some file types?
-o.signcolumn = 'yes'
 
 -- allow mouse
 o.mouse = 'a'
@@ -105,3 +101,7 @@ augroup highlight_yank
 	au TextYankPost * silent! lua vim.highlight.on_yank({ higroup = "IncSearch", timeout = 1000 })
 augroup end
 ]]
+
+if vim.g.vscode == 1 then
+   vim.g.editorconfig = false
+end

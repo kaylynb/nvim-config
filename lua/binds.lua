@@ -1,19 +1,8 @@
-local wk = require('which-key')
-
 local function set_keymaps(mode, keys, opts)
 	for lh, rh in pairs(keys) do
 		vim.api.nvim_set_keymap(mode, lh, rh, opts or { silent = true, noremap = true })
 	end
 end
-
--- leader
-wk.register({
-	['<Leader>'] = {
-		['<Space>'] = { ':', 'Command' },
-		w = { '<cmd>w<CR>', 'Save' },
-		q = { '<cmd>q<CR>', 'Quit' },
-	}
-})
 
 -- normal mode
 set_keymaps('n', {
@@ -26,13 +15,6 @@ set_keymaps('n', {
 	-- move line
 	['<A-j>'] = ':m .+1<CR>==',
 	['<A-k>'] = ':m .-2<CR>==',
-})
-
-wk.register({
-	[']q'] = { ':cnext<CR>', 'Next Quickfix' },
-	['[q'] = { ':cprev<CR>', 'Previous Quickfix' },
-	[']l'] = { ':lnext<CR>', 'Next Location' },
-	['[l'] = { ':lprev<CR>', 'Previous Location' },
 })
 
 -- visual mode
