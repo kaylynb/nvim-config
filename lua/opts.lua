@@ -1,6 +1,5 @@
 local o = vim.opt
 
--- if vim.fn.has('win64') == 1 then
 if vim.loop.os_uname().version:match 'Windows' then
 -- disable ctrl-z on windows as it locks terminal instead
 	vim.api.nvim_set_keymap('n', '<C-z>', '<Nop>', {})
@@ -8,7 +7,6 @@ if vim.loop.os_uname().version:match 'Windows' then
 	-- setup pwsh for shell cmds
 	o.shell = [[pwsh -NoLogo]]
 
-	--o.shellpipe='|'
 	o.shellxquote=''
 	o.shellcmdflag=[[-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command]]
 	o.shellredir=[[| Out-File -Encoding UTF8]]
@@ -27,7 +25,7 @@ o.title = true
 o.number = true
 
 -- highlight line
---o.cursorline = true
+o.cursorline = true
 
 -- search options
 o.incsearch = true
@@ -40,7 +38,7 @@ o.inccommand = 'split'
 -- disable intro
 o.shortmess = vim.opt.shortmess + 'I'
 
--- disable showmode (lightline shows this)
+-- disable showmode (lualine already shows this)
 o.showmode = false
 
 -- tabstops
@@ -59,10 +57,7 @@ o.listchars = 'tab:→ ,eol:¬,space:·'
 -- allow mouse
 o.mouse = 'a'
 
--- TODO: figure out what plugins this fucks with
-o.updatetime = 500
-
--- TODO: not sure if I like this just trying it out
+-- Disable ~ char for buffer end
 vim.opt.fillchars = { eob = ' ' }
 
 -- rg for grep

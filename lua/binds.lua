@@ -6,12 +6,6 @@ end
 
 -- normal mode
 set_keymaps('n', {
-	-- window navigation
-	['<C-h>'] = '<C-w>h',
-	['<C-j>'] = '<C-w>j',
-	['<C-k>'] = '<C-w>k',
-	['<C-l>'] = '<C-w>l',
-
 	-- move line
 	['<A-j>'] = ':m .+1<CR>==',
 	['<A-k>'] = ':m .-2<CR>==',

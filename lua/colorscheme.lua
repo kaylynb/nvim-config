@@ -1,6 +1,4 @@
-local vscode = vim.g.vscode == 1
-
-if not vscode then
+if vim.g.vscode ~= 1 then
 
 	vim.opt.termguicolors = true
 	vim.opt.background = 'dark'
